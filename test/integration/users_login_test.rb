@@ -2,6 +2,9 @@ require 'test_helper'
 
 class UsersLoginTest < ActionDispatch::IntegrationTest
 
+  def setup
+    @users = users(:gemille)
+
   test "login with valid information" do
     get login_path
     assert_template 'sessions/new'
